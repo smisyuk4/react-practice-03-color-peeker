@@ -1,0 +1,18 @@
+Форми:
+https://react-hook-form.com/
+https://react-hook-form.com/api/useform/reset
+
+npm install react-hook-form
+
+Валідація
+https://github.com/jquense/yup
+npm install @hookform/resolvers yup
+
+https://github.com/facebook/prop-types
+npm i prop-types
+
+Стилі
+https://emotion.sh/docs/styled
+npm i @emotion/styled @emotion/react
+
+
