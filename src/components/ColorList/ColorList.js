@@ -2,11 +2,21 @@ import PropTypes from 'prop-types';
 import { ColorItem } from 'components/ColorItem';
 import { ColorListStyle } from './ColorList.styled';
 
-export const ColorList = ({ colors }) => {
+export const ColorList = ({
+  colors,
+  // onClickColor,
+  getIdxColorActive,
+}) => {
   return (
     <ColorListStyle>
-      {colors.map(color => (
-        <ColorItem key={color.name} color={color} />
+      {colors.map((color, idx) => (
+        <ColorItem
+          key={color.name}
+          color={color}
+          idx={idx}
+          // onClickColor={onClickColor}
+          getIdxColorActive={getIdxColorActive}
+        />
       ))}
     </ColorListStyle>
   );
@@ -14,4 +24,6 @@ export const ColorList = ({ colors }) => {
 
 ColorList.propTypes = {
   colors: PropTypes.array.isRequired,
+  // onClickColor: PropTypes.func.isRequired,
+  getIdxColorActive: PropTypes.func.isRequired,
 };

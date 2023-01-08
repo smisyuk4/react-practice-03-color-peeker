@@ -1,3 +1,6 @@
+Урок Репети
+https://www.youtube.com/watch?v=terXi4NlcoI&t=1589s
+
 Форми:
 https://react-hook-form.com/
 https://react-hook-form.com/api/useform/reset
