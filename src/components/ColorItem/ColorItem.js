@@ -1,11 +1,22 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import { ColorItemStyle, NameColor } from './ColorItem.styled';
 
-export const ColorItem = ({ color: { name, hex, rgba } }) => {
+export const ColorItem = ({ color: { name, hex, rgb } }) => {
   return (
-    <li>
-      <p>name: {name}</p>
-      <p>hex: {hex}</p>
-      <p>rgba: {rgba}</p>
-    </li>
+    <ColorItemStyle hexColor={hex}>
+      <NameColor>
+        <b>{name}</b>
+      </NameColor>
+      <p>{hex}</p>
+      <p>{rgb}</p>
+    </ColorItemStyle>
   );
+};
+
+ColorItem.propTypes = {
+  color: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    hex: PropTypes.string.isRequired,
+    rgb: PropTypes.string.isRequired,
+  }).isRequired,
 };

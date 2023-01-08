@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { colorsArr } from 'colors';
 import { ColorItemForm } from 'components/ColorItemForm';
 import { ColorList } from 'components/ColorList';
+import { Title } from 'components/Title';
 import PropTypes from 'prop-types';
+import { Container } from "./App.styled"
 
 
 export const App = () => {
@@ -10,14 +12,15 @@ export const App = () => {
  
   const onSubmitForm = ( newColor ) => {
     console.log(newColor)
-    setColors([...colorsArr, newColor]);
+    setColors(prevState => [...prevState, newColor]);
   }
 
   return (
-    <>
+    <Container>
+      <Title title="Color peeker" />
       <ColorItemForm onSubmitForm={onSubmitForm} />
       <ColorList colors={colors} />
-    </>
+    </Container>
   );
 };
 

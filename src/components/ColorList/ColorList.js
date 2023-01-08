@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 import { ColorItem } from 'components/ColorItem';
+import { ColorListStyle } from './ColorList.styled';
 
 export const ColorList = ({ colors }) => {
   return (
-    <ul>
+    <ColorListStyle>
       {colors.map(color => (
         <ColorItem key={color.name} color={color} />
       ))}
-    </ul>
+    </ColorListStyle>
   );
 };
 
