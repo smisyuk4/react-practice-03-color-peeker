@@ -29,13 +29,18 @@ export const App = () => {
     
   }
 
-  const toggleShowForm = (event) => {
+  const toggleShowForm = () => {
     setIsShowForm(prevState => !prevState)
   }
 
   const onClickBtnRemove = (event) => {
-    console.log(event.target)
-        console.log(event.currentTarget)
+    console.log(event.target.nodeName)
+        console.log(event.currentTarget.getAttribute('data-color') )
+    if (event.target.nodeName === 'svg' || event.target.nodeName === 'path') {
+          console.log("remove item from list")
+      return
+    }
+    // console.log("remove item from list")
   }
 
   return (

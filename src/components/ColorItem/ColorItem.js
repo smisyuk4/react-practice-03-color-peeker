@@ -15,8 +15,9 @@ export const ColorItem = ({
     <ColorItemStyle
       hexColor={hex}
       data-color={hex}
-      onClick={() => {
+      onClick={event => {
         getIdxColorActive(idx);
+        onClickBtnRemove(event);
       }}
       activeColorIdx={activeColorIdx}
       idx={idx}
@@ -25,7 +26,7 @@ export const ColorItem = ({
         <span>
           <b>{name}</b>
           <IconContext.Provider value={{ className: 'icon-remove' }}>
-            <RiDeleteBin6Line onClick={onClickBtnRemove} />
+            <RiDeleteBin6Line />
           </IconContext.Provider>
         </span>
       </NameColor>
