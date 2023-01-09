@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-practice-03-color-peeker/static/css/main.e3b8eb3b.css",
-    "main.js": "/react-practice-03-color-peeker/static/js/main.565d4354.js",
+    "main.css": "/react-practice-03-color-peeker/static/css/main.4f397fc6.css",
+    "main.js": "/react-practice-03-color-peeker/static/js/main.4bb564b1.js",
     "index.html": "/react-practice-03-color-peeker/index.html",
-    "main.e3b8eb3b.css.map": "/react-practice-03-color-peeker/static/css/main.e3b8eb3b.css.map",
-    "main.565d4354.js.map": "/react-practice-03-color-peeker/static/js/main.565d4354.js.map"
+    "main.4f397fc6.css.map": "/react-practice-03-color-peeker/static/css/main.4f397fc6.css.map",
+    "main.4bb564b1.js.map": "/react-practice-03-color-peeker/static/js/main.4bb564b1.js.map"
   },
   "entrypoints": [
-    "static/css/main.e3b8eb3b.css",
-    "static/js/main.565d4354.js"
+    "static/css/main.4f397fc6.css",
+    "static/js/main.4bb564b1.js"
   ]
 }
