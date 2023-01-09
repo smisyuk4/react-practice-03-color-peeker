@@ -1,26 +1,33 @@
 import PropTypes from 'prop-types';
+import { RiDeleteBin6Line } from 'react-icons/ri';
+import { IconContext } from 'react-icons';
+
 import { ColorItemStyle, NameColor } from './ColorItem.styled';
 
 export const ColorItem = ({
   color: { name, hex, rgb },
+  onClickBtnRemove,
   idx,
-  // onClickColor,
   getIdxColorActive,
+  activeColorIdx,
 }) => {
   return (
     <ColorItemStyle
       hexColor={hex}
       data-color={hex}
-      // onClick={onClickColor}
       onClick={() => {
-        // onClickColor();
         getIdxColorActive(idx);
       }}
+      activeColorIdx={activeColorIdx}
+      idx={idx}
     >
       <NameColor>
-        <b>
-          {name} {idx}
-        </b>
+        <span>
+          <b>{name}</b>
+          <IconContext.Provider value={{ className: 'icon-remove' }}>
+            <RiDeleteBin6Line onClick={onClickBtnRemove} />
+          </IconContext.Provider>
+        </span>
       </NameColor>
       <p>{hex}</p>
       <p>{rgb}</p>
@@ -34,7 +41,7 @@ ColorItem.propTypes = {
     hex: PropTypes.string.isRequired,
     rgb: PropTypes.string.isRequired,
   }).isRequired,
+  onClickBtnRemove: PropTypes.func.isRequired,
   idx: PropTypes.number.isRequired,
-  // onClickColor: PropTypes.func.isRequired,
   getIdxColorActive: PropTypes.func.isRequired,
 };

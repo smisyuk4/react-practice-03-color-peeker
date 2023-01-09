@@ -1,9 +1,12 @@
 import styled from '@emotion/styled';
 
 export const ColorItemStyle = styled.li`
-  display: block;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 5px;
-  width: 120px;
+  width: 130px;
   border-radius: 8px;
   background-color: ${props => props.hexColor};
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
@@ -18,8 +21,16 @@ export const ColorItemStyle = styled.li`
       rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
       rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
     cursor: pointer;
-    transform: scale(1.2);
   }
+
+  //active color item
+  transform: ${props => {
+    if (props.idx === props.activeColorIdx) {
+      return 'scale(1.2)';
+    } else {
+      return 'none';
+    }
+  }};
 `;
 
 export const NameColor = styled.p`

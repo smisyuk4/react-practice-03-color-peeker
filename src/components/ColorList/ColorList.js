@@ -4,8 +4,9 @@ import { ColorListStyle } from './ColorList.styled';
 
 export const ColorList = ({
   colors,
-  // onClickColor,
+  onClickBtnRemove,
   getIdxColorActive,
+  activeColorIdx,
 }) => {
   return (
     <ColorListStyle>
@@ -13,9 +14,10 @@ export const ColorList = ({
         <ColorItem
           key={color.name}
           color={color}
+          onClickBtnRemove={onClickBtnRemove}
           idx={idx}
-          // onClickColor={onClickColor}
           getIdxColorActive={getIdxColorActive}
+          activeColorIdx={activeColorIdx}
         />
       ))}
     </ColorListStyle>
@@ -24,6 +26,6 @@ export const ColorList = ({
 
 ColorList.propTypes = {
   colors: PropTypes.array.isRequired,
-  // onClickColor: PropTypes.func.isRequired,
+  onClickBtnRemove: PropTypes.func.isRequired,
   getIdxColorActive: PropTypes.func.isRequired,
 };

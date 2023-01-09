@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { colorsArr } from 'colors';
+import { Controls } from 'components/Controls';
 import { ColorItemForm } from 'components/ColorItemForm';
 import { ColorList } from 'components/ColorList';
 import { Title } from 'components/Title';
@@ -9,40 +10,52 @@ import { Container } from "./App.styled"
 
 export const App = () => {
   const [colors, setColors] = useState([...colorsArr]);
-  const [activeColorIdx, setActiveColorIdx] = useState(0)
-  // const [activeColor, setActiveColor] = useState('')
+  const [activeColorIdx, setActiveColorIdx] = useState(null)
+  const [isShowForm, setIsShowForm] = useState(false)
  
   const onSubmitForm = ( newColor ) => {
     console.log(newColor)
     setColors(prevState => [...prevState, newColor]);
+    setIsShowForm(false)
   }
-
-  // const onClickColor = (data) => {
-  //   console.log(data)
-    // console.log(data.currentTarget)
-    // console.log(data.currentTarget.nodeName)
-    // console.log(data.currentTarget.getAttribute('data-color'))
-    // const currentColor = data.currentTarget.getAttribute('data-color')
-    // setActiveColor(currentColor)
-
-  // }
 
   const getIdxColorActive = (idx) => {
     console.log(idx)
-    setActiveColorIdx(idx)
+    if (activeColorIdx !== idx) {
+      setActiveColorIdx(idx)
+    } else {
+      setActiveColorIdx(null)
+    }
+    
+  }
+
+  const toggleShowForm = (event) => {
+    setIsShowForm(prevState => !prevState)
+  }
+
+  const onClickBtnRemove = (event) => {
+    console.log(event.target)
+        console.log(event.currentTarget)
   }
 
   return (
     <Container>
       <Title
         title="Color peeker"
-        // activeColor={activeColor}
       />
-      <ColorItemForm onSubmitForm={onSubmitForm} />
+
+      <Controls
+        isShowForm={isShowForm}
+        toggleShowForm={toggleShowForm}
+      />
+
+      {isShowForm && <ColorItemForm onSubmitForm={onSubmitForm} />}
+
       <ColorList
         colors={colors}
-        // onClickColor={onClickColor}
+        onClickBtnRemove={onClickBtnRemove}
         getIdxColorActive={getIdxColorActive}
+        activeColorIdx={activeColorIdx}
       />
     </Container>
   );
