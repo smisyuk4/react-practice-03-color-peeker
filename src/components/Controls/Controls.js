@@ -9,6 +9,14 @@ export const Controls = ({ isShowForm, toggleShowForm }) => {
       <Button type="button" onClick={toggleShowForm}>
         {isShowForm ? 'Hide form' : 'Show form'}
       </Button>
+      <a
+        href="https://www.rapidtables.com/web/color/RGB_Color.html"
+        target="blank"
+        rel="noopener noreferer"
+        aria-label="site w/colors"
+      >
+        site w/colors
+      </a>
     </ControlsWrp>
   );
 };

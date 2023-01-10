@@ -5,4 +5,8 @@ export const ColorListStyle = styled.ul`
   max-width: calc(100vw - 32px);
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   grid-gap: 16px;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
 `;

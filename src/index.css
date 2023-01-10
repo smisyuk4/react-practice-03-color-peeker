@@ -18,14 +18,3 @@ code {
 h1, h2, h3, p, div, span, img, input, label, form, button, ul, li { margin: 0; padding: 0;}
 
 ul{list-style: none;}
-
-.icon-remove {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 3px;
-}
-
-.icon-remove:hover, .icon-remove:focus{
-  color: red;
-}

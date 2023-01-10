@@ -25,8 +25,17 @@ export const ColorItemStyle = styled.li`
 
   //active color item
   transform: ${props => {
-    if (props.idx === props.activeColorIdx) {
+    if (props.id === props.activeColorId) {
       return 'scale(1.2)';
+    } else {
+      return 'none';
+    }
+  }};
+
+  //black, navy color
+  color: ${props => {
+    if (props.hexColor === '#000000' || props.hexColor === '#000080') {
+      return 'white';
     } else {
       return 'none';
     }
@@ -35,4 +44,16 @@ export const ColorItemStyle = styled.li`
 
 export const NameColor = styled.p`
   text-transform: uppercase;
+
+  svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 3px;
+
+    &:hover,
+    &:focus {
+      color: red;
+    }
+  }
 `;

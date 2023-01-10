@@ -22,8 +22,8 @@ const VALIDATION_SCHEMA = yup
 
 const DEFAULT_VALUES = {
   name: '',
-  hex: '',
-  rgb: '',
+  hex: '#',
+  rgb: 'rgb( , , )',
 };
 
 export const ColorItemForm = ({ onSubmitForm }) => {
@@ -37,9 +37,10 @@ export const ColorItemForm = ({ onSubmitForm }) => {
     resolver: yupResolver(VALIDATION_SCHEMA),
   });
 
-  const onSubmit = data => {
-    console.log(data);
-    onSubmitForm(data);
+  const onSubmit = formData => {
+    const date = new Date();
+    const newColor = { id: date.getTime(), ...formData };
+    onSubmitForm(newColor);
     // reset(DEFAULT_VALUES); //можна передати об'єкт з полями для запису в інпути
     reset();
   };

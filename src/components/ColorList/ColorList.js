@@ -4,20 +4,21 @@ import { ColorListStyle } from './ColorList.styled';
 
 export const ColorList = ({
   colors,
+  typeList,
   onClickBtnRemove,
-  getIdxColorActive,
-  activeColorIdx,
+  activeColorId,
+  getActiveColorId,
 }) => {
   return (
     <ColorListStyle>
-      {colors.map((color, idx) => (
+      {colors.map(color => (
         <ColorItem
-          key={color.name}
+          key={color.id}
           color={color}
+          typeList={typeList}
           onClickBtnRemove={onClickBtnRemove}
-          idx={idx}
-          getIdxColorActive={getIdxColorActive}
-          activeColorIdx={activeColorIdx}
+          activeColorId={activeColorId}
+          getActiveColorId={getActiveColorId}
         />
       ))}
     </ColorListStyle>
@@ -26,6 +27,7 @@ export const ColorList = ({
 
 ColorList.propTypes = {
   colors: PropTypes.array.isRequired,
+  typeList: PropTypes.string.isRequired,
   onClickBtnRemove: PropTypes.func.isRequired,
-  getIdxColorActive: PropTypes.func.isRequired,
+  getActiveColorId: PropTypes.func.isRequired,
 };

@@ -1,11 +1,15 @@
 import styled from '@emotion/styled';
 
 export const ControlsWrp = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 10px;
 `;
 
 export const Button = styled.button`
   padding: 5px;
+  margin-bottom: 10px;
   width: 100px;
   font-weight: 700;
   text-transform: uppercase;
