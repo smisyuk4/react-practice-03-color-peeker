@@ -1,0 +1,11 @@
+{
+    "extends": [
+        "plugin:react/recommended"
+    ],
+    "no-unused-vars": [
+        "error",
+        {
+            "varsIgnorePattern": "^h$"
+        }
+    ]
+}
