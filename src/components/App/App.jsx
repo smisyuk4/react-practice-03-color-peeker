@@ -11,15 +11,12 @@ import { Container } from './App.styled';
 const KEY_COLOR_STORAGE = 'customColor'
 
 export const App = () => {
-  // const [defColors, setDefColors] = useState([...colorsArr]);
   const defColors = useRef([...colorsArr]);
   const [customColors, setCustomColors] = useLocalStorage(KEY_COLOR_STORAGE, [])
   const [activeColorId, setActiveColorId] = useState(null);
   const [isShowForm, setIsShowForm] = useState(false);
 
-
   useEffect(() => {
-    console.log(customColors)
     localStorage.setItem(KEY_COLOR_STORAGE, JSON.stringify(customColors))
   },[customColors])
 
