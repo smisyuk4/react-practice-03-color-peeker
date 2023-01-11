@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { colorsArr } from 'colors';
 import { useLocalStorage } from 'hooks';
@@ -11,7 +11,8 @@ import { Container } from './App.styled';
 const KEY_COLOR_STORAGE = 'customColor'
 
 export const App = () => {
-  const [defColors, setDefColors] = useState([...colorsArr]);
+  // const [defColors, setDefColors] = useState([...colorsArr]);
+  const defColors = useRef([...colorsArr]);
   const [customColors, setCustomColors] = useLocalStorage(KEY_COLOR_STORAGE, [])
   const [activeColorId, setActiveColorId] = useState(null);
   const [isShowForm, setIsShowForm] = useState(false);
@@ -58,7 +59,7 @@ export const App = () => {
       {isShowForm && <ColorItemForm onSubmitForm={onSubmitForm} />}
      
       <ColorList
-        colors={defColors}
+        colors={defColors.current}
         typeList="default"
         onClickBtnRemove={onClickBtnRemove}
         activeColorId={activeColorId}
